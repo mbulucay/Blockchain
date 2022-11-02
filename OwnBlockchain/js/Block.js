@@ -1,11 +1,12 @@
 const SHA256 = require('crypto-js/sha256')
+const {Message} = require('./Message.js')
 
 class Block{
 
-    constructor(_data, _previousHash = ''){
+    constructor(_messages, _previousHash = ''){
         this.timestamp = Date.now().toString();
-        this.data = _data;
         this.previousHash = _previousHash;
+        this.messages = _messages;
         this.hash = this.calculateHash();
         this.nonce = 0;
     }

@@ -6,7 +6,6 @@ class Message{
         this.toAddress = toAddress;
         this.content = content;
     }
-
 }
 
 module.exports.Message = Message;
