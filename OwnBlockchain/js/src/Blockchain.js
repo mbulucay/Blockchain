@@ -38,11 +38,20 @@ class Blockchain{
         this.blockchain.push(block);
 
         this.pendingMessages = [
-            new Message('system', miningRewardAddress, `${miningRewardAddress} thank you for your services`)
+            new Message('system', miningRewardAddress, `${miningRewardAddress} thank you for your services`);
         ]
     }
 
     addMessage(message){
+
+        if(!message.fromAddress || !message.toAddress){
+            return new Error(`The message need from address and to address to be valid message `);
+        }
+
+        if(!message.inValid()){
+            return new Error(`Cannot add invalid message in to chain`);
+        }
+
         this.pendingMessages.push(message);
     }
 
@@ -88,6 +97,11 @@ class Blockchain{
     isValid(){
 
         for(let i=1; i<this.getSize(); i++){
+
+            if(!this.blockchain[i].hasValidMessages()){
+                return false;
+            }
+
             if(this.blockchain[i].hash !== this.blockchain[i].calculateHash()){
                 console.log(1);
                 console.log(this.blockchain[i].hash);

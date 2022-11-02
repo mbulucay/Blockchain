@@ -26,6 +26,15 @@ class Block{
         console.log(`Hash : ${this.hash}`);
     }
 
+    hasValidMessages(){
+        for(const msg of this.messages){
+            if(!msg.isValid()){
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
 
 module.exports.Block = Block;
