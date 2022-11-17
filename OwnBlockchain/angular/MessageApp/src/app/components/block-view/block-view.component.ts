@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+const {Block} = require('../../../assets/Block.js');
 
 @Component({
   selector: 'app-block-view',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BlockViewComponent implements OnInit {
 
-  @Input() public block:any;
+  @Input() public block:typeof Block;
 
   constructor() { }
 

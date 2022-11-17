@@ -3,10 +3,19 @@
     <h1>Blocks On Chain</h1>
     <p>Each card represents a block in chain. For detail click the block on the card</p>
 
-    <!-- <app-block-view
+    <app-block-view
         *ngFor="let block of blocks" 
-		[block]="block" 
-    ></app-block-view> -->
+		[block]="block"
+        (click)="showMessages(block)">
+        ></app-block-view>
 
 </div>
 
+<br><br>
+
+<div class = "container">
+    <h1> Messages in block </h1>    
+    <app-message-table
+        [messages]="selectedBlock.messages"
+    ></app-message-table>
+</div>

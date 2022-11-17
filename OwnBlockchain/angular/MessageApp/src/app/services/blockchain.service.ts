@@ -18,17 +18,20 @@ export class BlockchainService {
   constructor() { 
     this.blockchain.difficulty = 2;
     this.blockchain.minePendingTransaction("Owner Of The System Address");
-
     this.generateWalletKeys();
-
   }
 
   getBlocks(){
     return this.blockchain.blockchain;
   }
 
+  addMessage(message:typeof Message){
+    this.blockchain.addMessage(message);
+    this.blockchain.minePendingTransaction("Owner Of The System Address");
+  }
+
   private generateWalletKeys(){
-    const ec = new EC.ec('secp256k1');
+    const ec = new EC('secp256k1');
     const keyPair = ec.genKeyPair();
     
     this.walletKeys.push({
