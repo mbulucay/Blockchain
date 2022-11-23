@@ -14,8 +14,6 @@ export class SettingsComponent implements OnInit {
 
     this.blockchain = blockchainServices.blockchain;
 
-
-
   }
 
   ngOnInit(): void {

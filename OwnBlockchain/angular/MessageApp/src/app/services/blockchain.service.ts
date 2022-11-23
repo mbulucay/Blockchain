@@ -16,8 +16,8 @@ export class BlockchainService {
   public walletKeys : any[] = [];
 
   constructor() { 
+
     this.blockchain.difficulty = 2;
-    this.blockchain.minePendingTransaction("Owner Of The System Address");
     this.generateWalletKeys();
   }
 
@@ -27,7 +27,15 @@ export class BlockchainService {
 
   addMessage(message:typeof Message){
     this.blockchain.addMessage(message);
-    this.blockchain.minePendingTransaction("Owner Of The System Address");
+    // this.blockchain.minePendingMessages("Owner Of The System Address");
+  }
+
+  getPendingMessages(){
+    return this.blockchain.pendingMessages;
+  }
+
+  minePendingMessages(){
+    this.blockchain.minePendingMessages(this.walletKeys[0].publicKey);
   }
 
   private generateWalletKeys(){

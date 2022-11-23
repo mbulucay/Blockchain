@@ -46,7 +46,7 @@ class Blockchain{
     }
 
 
-    minePendingTransaction(miningRewardAddress){
+    minePendingMessages(miningRewardAddress){
         let block = new Block(this.pendingMessages, this.getLastBlock().hash);
 
         block.mineBlock(this.difficulty);

@@ -9,7 +9,7 @@ const {Message} = require("../../../assets/Message.js")
 })
 export class MessageTableComponent implements OnInit {
 
-  @Input() public messages = [] as any[];;
+  @Input() public messages = [] as typeof Message[];;
 
   constructor() { }
 

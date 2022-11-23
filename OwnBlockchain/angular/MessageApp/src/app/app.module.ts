@@ -9,7 +9,9 @@ import { BlockViewComponent } from './components/block-view/block-view.component
 import { BlockchainService } from './services/blockchain.service';
 import { MessageTableComponent } from './components/message-table/message-table.component';
 import { SettingsComponent } from './pages/settings/settings.component';
-import { SendMessageComponent } from './pages/send-message/send-message.component'
+import { SendMessageComponent } from './pages/send-message/send-message.component';
+import { CreateMessageComponent } from './pages/create-message/create-message.component';
+import { PendingMessagesComponent } from './pages/pending-messages/pending-messages.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { SendMessageComponent } from './pages/send-message/send-message.componen
     BlockViewComponent,
     MessageTableComponent,
     SettingsComponent,
-    SendMessageComponent
+    SendMessageComponent,
+    CreateMessageComponent,
+    PendingMessagesComponent
   ],
   imports: [
     BrowserModule,
