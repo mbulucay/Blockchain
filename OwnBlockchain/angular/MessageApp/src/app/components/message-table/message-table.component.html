@@ -7,7 +7,7 @@
       <th scope="col">From</th>
       <th scope="col">To</th>
       <th scope="col">Content</th>
-      <th scope="col">Timestamp</th>
+      <!-- <th scope="col">Timestamp</th> -->
       <th scope="col">Valid?</th>
     </tr>
   </thead>
@@ -32,13 +32,13 @@
           </span> -->
       </td>
       <td>
-        {{msg.Content}}
+        {{msg.content}}
         <span *ngIf="msg.fromAddress === null" class="text-muted"><br><small>(Block reward)</small></span>
       </td>
-      <td>
+      <!-- <td>
         {{msg.timestamp}}<br>
         <span class="text-muted"><small>{{msg.timestamp |date:'MMM d, y, HH:mm'}}</small></span>
-      </td>
+      </td> -->
       <td style="max-width: 40px;">
         <span *ngIf="msg.isValid()">✓</span>
         <span *ngIf="!msg.isValid()">✗</span>

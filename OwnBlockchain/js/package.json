@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "crypto-js": "^4.1.1",
-    "elliptic": "^6.5.4"
+    "ecc": "^0.0.2",
+    "elliptic": "^6.5.4",
+    "encrypt-rsa": "^2.1.2"
   }
 }

@@ -7,10 +7,8 @@ const ec = new EC('secp256k1');
 
 class Blockchain{
 
-    // system keys
-    // Private Key 8a4b34192df786b0e3fb7e673324f99bec6609c903a117b5418eaad3f1fa4805
-    // Public Key 04470591955bc1f29054b5aa8a36e42b4417f8b708d63374906bcd38f02d3b339dc52709c8a4c54305106c10ecbd3e791f5d8de4bc80d85ae06ac8243dc767f937
-
+    // Private Key a7a16d3a0626037f0b7efc52ee97df24ea447a0ad206b3cc7743f842d1265b7d
+    // Public Key 04c629278469148aca6cd79da4f4e3e8f0248010464b6e8624dfb8d6ef00fb5156f7f6899fb5eeaa78bf80b78f54f16fb9128f90b8804c90c43a908e57cb4c5cb3
     constructor(){
         this.blockchain = [this.generateGenesis()]
         this.difficulty = 2;
@@ -20,7 +18,7 @@ class Blockchain{
 
     generateGenesis(){
             
-        let privateKey = ec.keyFromPrivate("0000000m0b0u0l0u0c0a0y000000000000000000000000000000000000000000");
+        let privateKey = ec.keyFromPrivate("a7a16d3a0626037f0b7efc52ee97df24ea447a0ad206b3cc7743f842d1265b7d");
         let messageAddress = privateKey.getPublic('hex');
 
         let msg = new Message(messageAddress , "mbulucay", `mbulucay thank you for your services`);
@@ -56,7 +54,7 @@ class Blockchain{
         // console.log(JSON.stringify(this.blockchain,  null, 5))
         this.blockchain.push(block);
         
-        let privateKey = ec.keyFromPrivate("0000000m0b0u0l0u0c0a0y000000000000000000000000000000000000000000");
+        let privateKey = ec.keyFromPrivate("a7a16d3a0626037f0b7efc52ee97df24ea447a0ad206b3cc7743f842d1265b7d");
         let messageAddress = privateKey.getPublic('hex');
 
         let msg = new Message(messageAddress , miningRewardAddress, `${miningRewardAddress} thank you for your services`);
